@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+
+<div class="content">
+
+    <!-- Next Steps -->
+    <p class="title">Hot Beverage Machine</p>
+
+    <p class="drink-question">What would you like to drink today?</p>
+
+    <input type="hidden" #selection>
+
+    <div class="card-container">
+        <div class="card card-small" (click)="selection.value = 'lemontea'" tabindex="0">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+            <span>Lemon Tea</span>
+        </div>
+
+        <div class="card card-small" (click)="selection.value = 'coffee'" tabindex="0">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+            <span>Coffee</span>
+        </div>
+
+        <div class="card card-small" (click)="selection.value = 'chocolate'" tabindex="0">
+            <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" /></svg>
+            <span>Chocolate</span>
+        </div>
+    </div>
+
+    <!-- Recipe Steps -->
+    <div class="card-container">
+        <div *ngIf="selection.value ==='lemontea'">
+            <img src="assets/images/lemon_tea.jpg" alt="Lemon tea" class="tea-img">
+            <div class="lemon-tea"></div>
+        </div>
+
+        <div *ngIf="selection.value === 'coffee'">
+            <div class="coffee-container">
+                <div class="coffee-header">
+                    <div class="machine-title">Red river</div>
+                    <div class="coffee-header__buttons coffee-header__button-one"></div>
+                    <div class="coffee-header__buttons coffee-header__button-two"></div>
+                    <div class="coffee-header__display"></div>
+                    <div class="coffee-header__details"></div>
+                </div>
+                <div class="coffee-medium">
+                    <div class="coffe-medium__dispenser"></div>
+                    <div class="coffee-medium__arm"></div>
+                    <div class="coffee-medium__liquid"></div>
+                    <div class="coffee-medium__cup"></div>
+                </div>
+                <div class="coffee-footer"></div>
+            </div>
+            <div class="coffee"></div>
+        </div>
+
+        <div *ngIf="selection.value === 'chocolate'">
+            <img src="assets/images/hot_chocolate.jpg" alt="Hot Chocolate" class="tea-img">
+            <div class="chocolate"></div>
+        </div>
+    </div>
+</div>

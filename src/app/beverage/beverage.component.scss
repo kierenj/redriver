@@ -1,0 +1,433 @@
+.title {
+	display: flex;
+	font-family: "Vibur", cursive;
+	align-items: center;
+	font-size: 40px;
+	line-height: 50px;
+}
+
+.content {
+	display: flex;
+	margin: 82px auto 32px;
+	padding: 0 16px;
+	max-width: 950px;
+	flex-direction: column;
+	align-items: center;
+	font-family: "Vibur", cursive;
+	font-size: 1rem;
+}
+
+.drink-question {
+	white-space: nowrap;
+	overflow: hidden;
+	width: 23em;
+	justify-content: center;
+	padding-left: 156px;
+	animation: type 3s steps(60, end);
+}
+
+@keyframes type {
+	from {
+		width: 0;
+	}
+}
+
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 16px;
+}
+
+.card {
+	border-radius: 4px;
+	border: 1px solid #eee;
+	background-color: #fafafa;
+	height: 40px;
+	width: 200px;
+	margin: 0 8px 16px;
+	padding: 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	transition: all 0.2s ease-in-out;
+	line-height: 24px;
+}
+
+.card-container .card:not(:last-child) {
+	margin-right: 0;
+}
+
+.card.card-small {
+	height: 16px;
+	width: 168px;
+}
+
+.card-container .card:not(.highlight-card) {
+	cursor: pointer;
+}
+
+.card-container .card:not(.highlight-card):hover {
+	transform: translateY(-3px);
+	box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+}
+
+.card.highlight-card {
+	background-color: #1976d2;
+	color: white;
+	font-weight: 600;
+	border: none;
+	width: auto;
+	min-width: 30%;
+	position: relative;
+}
+
+.card.card.highlight-card span {
+	margin-left: 60px;
+}
+
+a,
+a:visited,
+a:hover {
+	color: #1976d2;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #125699;
+}
+
+// COFFEE MACHINE - START
+.coffee-container {
+	width: 300px;
+	height: 280px;
+	position: absolute;
+	left: calc(50% - 150px);
+}
+
+.coffee-header {
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-color: red;
+	border-radius: 10px;
+}
+
+.machine-title {
+	padding-left: 10px;
+}
+
+.coffee-header__buttons {
+	width: 25px;
+	height: 25px;
+	position: absolute;
+	top: 25px;
+	background-color: black;
+	border-radius: 50%;
+}
+
+.coffee-header__buttons::after {
+	content: "";
+	width: 8px;
+	height: 8px;
+	position: absolute;
+	bottom: -8px;
+	left: calc(50% - 4px);
+	background-color: #615e5e;
+}
+
+.coffee-header__button-one {
+	left: 15px;
+}
+
+.coffee-header__button-two {
+	left: 50px;
+}
+
+.coffee-header__display {
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	top: calc(50% - 25px);
+	left: calc(50% - 25px);
+	border-radius: 50%;
+	background-color: black;
+	border: 5px solid darkslategrey;
+	box-sizing: border-box;
+}
+
+.coffee-header__details {
+	width: 8px;
+	height: 20px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: #9b9091;
+	box-shadow: -12px 0 0 black, -24px 0 0 #9b9091, -36px 0 0 black;
+	border-radius: 4px;
+}
+
+.coffee-medium {
+	width: 90%;
+	height: 160px;
+	position: absolute;
+	top: 80px;
+	left: calc(50% - 45%);
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.coffee-medium:before {
+	content: "";
+	width: 90%;
+	height: 100px;
+	background-color: black;
+	position: absolute;
+	bottom: 0;
+	left: calc(50% - 45%);
+	border-radius: 20px 20px 0 0;
+}
+
+.coffe-medium__dispenser {
+	width: 60px;
+	height: 20px;
+	position: absolute;
+	top: 0;
+	left: calc(50% - 30px);
+	background-color: #231f20;
+}
+
+.coffe-medium__dispenser::before {
+	content: "";
+	width: 50px;
+	height: 20px;
+	border-radius: 0 0 50% 50%;
+	position: absolute;
+	bottom: -20px;
+	left: calc(50% - 25px);
+	background-color: #231f20;
+}
+
+.coffe-medium__dispenser::after {
+	content: "";
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	bottom: -30px;
+	left: calc(50% - 5px);
+	background-color: #231f20;
+}
+
+.coffee-medium__arm {
+	width: 70px;
+	height: 15px;
+	position: absolute;
+	top: 15px;
+	right: 25px;
+	background-color: #231f20;
+	border-radius: 8px;
+}
+
+.coffee-medium__arm::before {
+	content: "";
+	width: 15px;
+	height: 5px;
+	position: absolute;
+	top: 7px;
+	left: -15px;
+	background-color: #9e9495;
+}
+
+.coffee-medium__cup {
+	width: 80px;
+	height: 47px;
+	position: absolute;
+	bottom: 0;
+	left: calc(50% - 40px);
+	background-color: #fff;
+	border-radius: 0 0 70px 70px / 0 0 110px 110px;
+}
+
+.coffee-medium__cup::after {
+	content: "";
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 6px;
+	right: -13px;
+	border: 5px solid #fff;
+	border-radius: 50%;
+}
+
+@keyframes liquid {
+	0% {
+		height: 0px;
+		opacity: 1;
+	}
+	5% {
+		height: 0px;
+		opacity: 1;
+	}
+	20% {
+		height: 62px;
+		opacity: 1;
+	}
+	95% {
+		height: 62px;
+		opacity: 1;
+	}
+	100% {
+		height: 62px;
+		opacity: 0;
+	}
+}
+
+.coffee-medium__liquid {
+	width: 6px;
+	height: 63px;
+	opacity: 0;
+	position: absolute;
+	top: 50px;
+	left: calc(50% - 3px);
+	background-color: #74372b;
+	animation: liquid 4s 4s linear;
+}
+
+.coffee-footer {
+	width: 95%;
+	height: 15px;
+	position: absolute;
+	bottom: 25px;
+	left: calc(50% - 47.5%);
+	background-color: red;
+	border-radius: 10px;
+}
+
+.coffee-footer::after {
+	content: "";
+	width: 106%;
+	height: 26px;
+	position: absolute;
+	bottom: -25px;
+	left: -8px;
+	background-color: #000;
+}
+// COFFEE MACHINE - END
+
+// RECIPE STEPS - START
+.recipe {
+	margin-top: 300px;
+	font-family: Georgia, serif;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	align-items: center;
+	color: #000;
+}
+
+.lemon-tea {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 10vh;
+	&:after {
+		animation: lemon-tea-recipe 12s linear alternate;
+		display: block;
+		content: "Your lemon tea is ready!";
+		font-size: 60px;
+		display: flex;
+		line-height: 44px;
+	}
+}
+
+@keyframes lemon-tea-recipe {
+	0% {
+		content: "Boil some water";
+	}
+
+	25% {
+		content: "Steep the tea in the water";
+	}
+
+	50% {
+		content: "Pour tea in the cup";
+	}
+
+	100% {
+		content: "Add lemon";
+	}
+}
+
+.coffee {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	&:after {
+		animation: coffee-recipe 12s linear alternate;
+		display: block;
+		content: "Your coffee is ready!";
+		font-size: 60px;
+		display: flex;
+		line-height: 44px;
+	}
+}
+
+@keyframes coffee-recipe {
+	0% {
+		content: "Boil some water";
+	}
+
+	25% {
+		content: "Brew the coffee grounds";
+	}
+
+	50% {
+		content: "Pour coffee in the cup";
+	}
+
+	100% {
+		content: "Add sugar and milk";
+	}
+}
+
+.chocolate {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	min-height: 10vh;
+	&:after {
+		animation: chocolate-recipe 12s linear alternate;
+		display: block;
+		content: "Your hot chocolate is ready!";
+		font-size: 60px;
+		display: flex;
+		line-height: 44px;
+	}
+}
+
+@keyframes chocolate-recipe {
+	0% {
+		content: "Boil some water";
+	}
+
+	25% {
+		content: "Add drinking chocolate powder to the water";
+	}
+
+	50% {
+		content: "Pour chocolate in the cup";
+	}
+
+	100% {
+		content: "Your hot chocolate is ready!";
+	}
+}
+
+.tea-img {
+	width: 100%;
+}
+// RECIPE STEPS - END
